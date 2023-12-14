@@ -25,7 +25,7 @@ class Module(models.Model):
     id = models.AutoField(primary_key=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    number_of_tests = models.IntegerField(null=False)
+    number_of_tests = models.IntegerField(null=True, default=0)
     number_of_completed_tests = models.IntegerField(default=0)
 
     def update_number_of_tests(self):
@@ -68,8 +68,8 @@ class Test(models.Model):
     id = models.AutoField(primary_key=True)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    number_of_tasks = models.IntegerField()
-    number_of_completed_tasks = models.IntegerField()
+    number_of_tasks = models.IntegerField(default=0)
+    number_of_completed_tasks = models.IntegerField(default=0)
 
     def update_number_of_tasks(self):
         task_count = Task.objects.filter(test=self).count()

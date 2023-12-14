@@ -80,19 +80,23 @@ import pymysql
 pymysql.version_info = (1, 4, 6, "final", 0)  # Указываем версию PyMySQL
 pymysql.install_as_MySQLdb()
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'userdb',
+#         'USER': 'root',
+#         'PASSWORD': '2003710Pp.',
+#         'HOST': 'localhost',  # Или IP-адрес сервера MySQL
+#         'PORT': '3306',  # Порт MySQL по умолчани
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'usersdb',
-        'USER': 'root',
-        'PASSWORD': '*****',
-        'HOST': 'localhost',  # Или IP-адрес сервера MySQL
-        'PORT': '3306',  # Порт MySQL по умолчанию
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",  # Adjust the path as needed
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
