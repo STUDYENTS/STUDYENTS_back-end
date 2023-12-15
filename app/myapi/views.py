@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from django.shortcuts import render
+from django.http import HttpResponse
+import os
 
 from .serializers import HeroSerializer, CourseSerializer, ModuleSerializer, LessonSerializer, TestSerializer, \
     TaskSerializer, AnswerSerializer
@@ -36,3 +39,17 @@ class TaskViewSet(viewsets.ModelViewSet):
 class AnswerViewSet(viewsets.ModelViewSet):
     queryset = Answer.objects.all().order_by('answer')
     serializer_class = AnswerSerializer
+
+def theory_view_function(request, filename):
+    file_path = os.path.join('../app/theory_files', filename)
+    with open(file_path, 'rb') as f:
+        response = HttpResponse(f.read(), content_type='application/pdf')
+        response['Content-Disposition'] = f'inline; filename="{filename}"'
+        return response
+
+def images_view_function(request, filename):
+    file_path = os.path.join('../app/images_files', filename)
+    with open(file_path, 'rb') as f:
+        response = HttpResponse(f.read(), content_type='application/pdf')
+        response['Content-Disposition'] = f'inline; filename="{filename}"'
+        return response

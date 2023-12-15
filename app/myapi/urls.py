@@ -17,5 +17,8 @@ router.register(r'answers', views.AnswerViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('theory_files/<str:filename>/', views.theory_view_function, name='file-view'),
+    path('images/<str:filename>/', views.images_view_function, name='file-view'),
+
 ]
