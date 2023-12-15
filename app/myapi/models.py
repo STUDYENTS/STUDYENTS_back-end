@@ -25,7 +25,7 @@ class Course(models.Model):
         null=True,
         blank=True,
         upload_to='img_course/',
-        validators=[FileExtensionValidator(allowed_extensions=['png', 'svg', 'gpg'])]
+        validators=[FileExtensionValidator(allowed_extensions=['png', 'svg', 'jpg'])]
     )
 
     def update_number_of_tests(self):
@@ -79,7 +79,7 @@ class Lesson(models.Model):
     video = models.FileField(
         null=True,
         blank=True,
-        upload_to='theory_files/',
+        upload_to='video/',
         validators=[FileExtensionValidator(allowed_extensions=['mp4'])]
     )
     file = models.FileField(

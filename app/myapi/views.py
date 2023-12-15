@@ -40,6 +40,19 @@ class AnswerViewSet(viewsets.ModelViewSet):
     queryset = Answer.objects.all().order_by('answer')
     serializer_class = AnswerSerializer
 
+# Пример заголовков CORS для Django
+from django.http import HttpResponse
+
+def video_view_function(request, filename):
+    file_path = os.path.join('../app/video', filename)
+    with open(file_path, 'rb') as f:
+        response = HttpResponse(f.read(), content_type='video/mp4')
+        response['Content-Disposition'] = f'inline; filename="{filename}"'
+        response['Access-Control-Allow-Origin'] = '*'  # Разрешить запросы с любого домена
+        response['Access-Control-Allow-Methods'] = 'GET'  # Разрешить только GET-запросы
+        return response
+
+
 def theory_view_function(request, filename):
     file_path = os.path.join('../app/theory_files', filename)
     with open(file_path, 'rb') as f:
@@ -48,8 +61,15 @@ def theory_view_function(request, filename):
         return response
 
 def images_view_function(request, filename):
-    file_path = os.path.join('../app/images_files', filename)
+    file_path = os.path.join('../app/images_course', filename)
     with open(file_path, 'rb') as f:
-        response = HttpResponse(f.read(), content_type='application/pdf')
+        response = HttpResponse(f.read(), content_type='application/jpg')
         response['Content-Disposition'] = f'inline; filename="{filename}"'
         return response
+def images_course_view_function(request, filename):
+    file_path = os.path.join('../app/img_course', filename)
+    with open(file_path, 'rb') as f:
+        response = HttpResponse(f.read(), content_type='application/jpg')
+        response['Content-Disposition'] = f'inline; filename="{filename}"'
+        return response
+
