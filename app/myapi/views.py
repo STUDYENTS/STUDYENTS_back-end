@@ -3,6 +3,11 @@ from rest_framework import viewsets
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
+from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .models import Module
+
 
 from .serializers import HeroSerializer, CourseSerializer, ModuleSerializer, LessonSerializer, TestSerializer, \
     TaskSerializer, AnswerSerializer
@@ -63,13 +68,30 @@ def theory_view_function(request, filename):
 def images_view_function(request, filename):
     file_path = os.path.join('../app/images_course', filename)
     with open(file_path, 'rb') as f:
-        response = HttpResponse(f.read(), content_type='application/jpg')
+        response = HttpResponse(f.read(), content_type='image/jpg')
         response['Content-Disposition'] = f'inline; filename="{filename}"'
         return response
 def images_course_view_function(request, filename):
     file_path = os.path.join('../app/img_course', filename)
     with open(file_path, 'rb') as f:
-        response = HttpResponse(f.read(), content_type='application/jpg')
+        response = HttpResponse(f.read(), content_type='image/jpg')
         response['Content-Disposition'] = f'inline; filename="{filename}"'
         return response
+
+
+def serialize_your_modules_function(modules):
+    pass
+
+
+from django.shortcuts import get_object_or_404
+
+
+@api_view(['GET'])
+def modules_for_course(request, course_id):
+    course_modules = Module.objects.filter(course_id=course_id)
+    serialized_modules = ModuleSerializer(course_modules, many=True)
+    return Response(serialized_modules.data)
+
+
+
 

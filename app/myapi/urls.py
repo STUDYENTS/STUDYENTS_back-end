@@ -4,6 +4,8 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import modules_for_course
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 router = routers.DefaultRouter()
@@ -22,6 +24,8 @@ urlpatterns = [
     path('images/<str:filename>/', views.images_view_function, name='file-view'),
     path('img_course/<str:filename>/', views.images_course_view_function, name='file-view'),
     path('video/<str:filename>/', views.video_view_function, name='video-view'),
+    path('modules_for_course/<int:course_id>/', modules_for_course, name='modules_for_course')
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

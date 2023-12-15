@@ -12,7 +12,7 @@ class HeroSerializer(serializers.HyperlinkedModelSerializer):
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
-        fields = ('id', 'title', 'course_description', 'author')
+        fields = ('id', 'title', 'course_description', 'author','number_of_tests', 'number_of_completed_tests', 'number_of_lessons','number_of_completed_lessons','img')
 
 
 class ModuleSerializer(serializers.HyperlinkedModelSerializer):
