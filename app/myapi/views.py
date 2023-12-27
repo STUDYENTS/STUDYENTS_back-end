@@ -132,7 +132,8 @@ def lessons_for_module(request, module_id):
     except Module.DoesNotExist:
         return Response({"error": "Module does not exist."},
                         status=status.HTTP_404_NOT_FOUND)
-
+def index(request):
+       return render(request, 'index.html')
 
 
 

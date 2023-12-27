@@ -1,0 +1,179 @@
+body {
+  line-height: 1.7;
+  color: #4d4d4d;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.site-section {
+  padding: 2.5em 0;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-image.overlay {
+  position: relative;
+}
+
+.bg-image.overlay:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.bg-image>.container {
+  position: relative;
+  z-index: 1;
+}
+
+.site-navbar {
+  margin-bottom: 0px;
+  z-index: 1999;
+  position: absolute;
+  width: 100%;
+}
+
+.site-blocks-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position: center center;
+}
+
+.site-blocks-cover.overlay {
+  position: relative;
+}
+
+.site-blocks-cover.overlay:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.row {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.rowhead {
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+
+.site-blocks-cover,
+.site-blocks-cover .row {
+  min-height: 600px;
+  height: calc(100vh);
+}
+
+.site-blocks-cover.inner-page-cover,
+.site-blocks-cover.inner-page-cover .row {
+  min-height: 600px;
+  height: calc(30vh);
+}
+
+.site-blocks-cover h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.site-blocks-cover p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.site-blocks-cover .btn {
+  border: 2px solid transparent;
+}
+
+.site-blocks-cover .btn:hover {
+  color: #fff !important;
+  background: none;
+  border: 2px solid #fff;
+}
+
+.how-it-work-item .number {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #fff;
+  background: #DEB887;
+  color: #fff;
+  line-height: 44px;
+  font-weight: 300;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+.how-it-work-item h2 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.how-it-work-item p {
+  color: white;
+}
+
+.ul-social-circle {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ul-social-circle li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.ul-social-circle li:first-child {
+  margin-left: 0;
+}
+
+.ul-social-circle li span {
+  width: 30px;
+  height: 30px;
+  background: #777;
+  font-size: 13px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ul-social-circle li a span {
+  color: #fff;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+.ul-social-circle li a:hover span {
+  background: #2b2b2b;
+  color: #fff;
+}
