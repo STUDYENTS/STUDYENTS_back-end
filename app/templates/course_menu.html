@@ -19,25 +19,45 @@
                <div class="lessons-bar">
             <ul id="lessons">
 			
-            <ul id="lessons">
-			
             </ul>
         </div>
         <button id="toggle-button"></button>
         <div class="main-content">
             <h1 id="lesson-title">Название урока</h1>
-            <video id="video" controls>
-                <source type="video/mp4" >
+            <video id="video" class="video-js" controls preload="auto" width="640" height="264">
+                <source src="" type="video/mp4" />
                 Ваш браузер не поддерживает видео.
             </video>
 
 
             <div class="additional-text">
-                <p>Дополнительная информация о текущем уроке или задания для студентов.</p>
-                <!-- Поле для прикрепления текстовых файлов -->
+                <p id="lesson-desc">Дополнительная информация о текущем уроке или задания для студентов.</p>
+                <!-- Поле для прикрепления файлов -->
+                <input type="file">
             </div>
             <div class="tests">
-			
+                <h2>Тест</h2>
+                <form>
+                    <p>Вопрос 1:</p>
+                    <div>
+                        <input type="radio" id="option1" name="question1" value="option1">
+                        <label for="option1">Вариант 1</label><br>
+                        <input type="radio" id="option2" name="question1" value="option2">
+                        <label for="option2">Вариант 2</label><br>
+                        <input type="radio" id="option3" name="question1" value="option3">
+                        <label for="option3">Вариант 3</label>
+                    </div>
+                    <p>Вопрос 2:</p>
+                    <div>
+                        <input type="radio" id="option4" name="question2" value="option4">
+                        <label for="option4">Вариант 1</label><br>
+                        <input type="radio" id="option5" name="question2" value="option5">
+                        <label for="option5">Вариант 2</label><br>
+                        <input type="radio" id="option6" name="question2" value="option6">
+                        <label for="option6">Вариант 3</label>
+                    </div>
+                    <br><a href="CursePage.html"><input type="button" value="Отправить ответы"></button></a>
+                </form>
             </div>
         </div>
     </div>

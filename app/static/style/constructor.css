@@ -1,0 +1,96 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+    background-color: #4CAF50;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .course {
+    margin: 10px;
+    padding: 10px;
+    width: 60%;
+    text-align: center;
+  }
+  
+  .course p {
+    color: #4CAF50;
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .addModuleBottom {
+    width: 40%;
+
+    
+  }
+  .module {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .lesson {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .lesson input {
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  .lesson button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .lesson button:hover {
+    opacity: 0.8;
+  }
+  
+  .content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+  .content label {
+    margin-right: 10px;
+  }
+  
+  .content input[type="file"] {
+    display: none;
+  }
+  
+  .content input[type="text"] {
+    width: 300px;
+  }
+  
+  .content button {
+    width: 100px;
+    margin-top: 10px;
+  }
+  
+  .active {
+    display: flex;
+  }

@@ -18,6 +18,7 @@ router.register(r'tasks', views.TaskViewSet)
 router.register(r'answers', views.AnswerViewSet)
 
 urlpatterns = [
+    path('front', views.index, name='index'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('theory_files/<str:filename>/', views.theory_view_function, name='file-view'),
@@ -25,6 +26,5 @@ urlpatterns = [
     path('img_course/<str:filename>/', views.images_course_view_function, name='file-view'),
     path('video/<str:filename>/', views.video_view_function, name='video-view'),
     path('modules_for_course/<int:course_id>/', modules_for_course, name='modules_for_course'),
-    path('lessons_for_module/<int:module_id>/', lessons_for_module, name='lessons_for_module'),
-
+    path('lessons_for_module/<int:module_id>/', lessons_for_module, name='lessons_for_module')
 ]

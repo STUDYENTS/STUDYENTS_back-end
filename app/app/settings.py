@@ -24,7 +24,9 @@ SECRET_KEY = 'django-insecure-+g^loiquo&4zr4)+e_w1t&%0o03h==+$x2i7+%w@%n&1t+je!(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.56.10", "django"]
+CSRF_TRUSTED_ORIGINS = ['http://192.168.56.10:8080']
+
 
 # Application definition
 
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'frontend'
 
 ]
 
@@ -80,7 +83,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",  # Замените на адрес вашего фронтенда
 ]
 CORS_ALLOW_ALL_ORIGINS = True
-
 
 import pymysql
 
@@ -136,10 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/templates/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
